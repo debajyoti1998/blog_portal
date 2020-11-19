@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+
+  <html>
+
+
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact/us">contact us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                follow us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">youtube</a>
+                <a class="dropdown-item" href="#">facebook</a>
+        
+                <a class="dropdown-item" href="#">website</a>
+              </div>
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <li>
+            <a href='/user/logout'><button type='button' class='btn btn-primary'>logout</button></a>
+          </li>
+            
+        </div>
+      </nav>
+      <ul class="nav navbar-nav ml-auto">
+        <li style="margin-center: 10px;">
+            <a href='/user/create_new'><button type='button' class='btn btn-primary'>create new blog</button></a>
+        </li>
+      </ul>
+
+     
+        
+        
+        <h1>all news</h1>
+
+        <table class="table table-hover">
+          <thead>
+            {% for a in data %}
+              {% if  a['body']!="" and a['blog_heading']!="" and a['author_name']!=""	 %}
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                      <div class="card-body">
+                        <p class="card-text"><b> {{ a['blog_heading']}}</b></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            
+                          <a href="/blog/{{ a['id']}}"><button type="button" class="btn btn-sm btn-outline-secondary">view</button></a> 
+                            <b>author name</b> <br> {{ a['author_name']}}
+                          </div>
+                          <small class="text-muted">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+          </thead>
+          <tbody>
+          
+
+
+
+
+
+
+
+
+              {% endif %}
+               
+            {% endfor %}
+           </tbody>
+        </table>
+    
+        
+        </body>
+        </html>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color">
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color">
+
+  <div class="color-primary">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left pt-4 pt-md-5">
+
+    <!-- Grid row -->
+    <div class="row mt-1 mt-md-0 mb-4 mb-md-0">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+        <!-- Links -->
+        <h5>About us</h5>
+        <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+        <p class="foot-desc mb-0">Here you can use rows and columns to organize your footer content. Lorem
+          ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+        <!-- Links -->
+        <h5>Products</h5>
+        <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+        <ul class="list-unstyled foot-desc">
+          <li class="mb-2">
+          </li>
+          <li class="mb-2">
+            <a href="#!">MDWordPress</a>
+          </li>
+          <li class="mb-2">
+            <a href="#!">BrandFlow</a>
+          </li>
+          <li class="mb-2">
+            <a href="#!">Bootstrap Angular</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+        <!-- Links -->
+        <h5>Useful links</h5>
+        <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+        <ul class="list-unstyled foot-desc">
+          <li class="mb-2">
+            <a href="#!">Your Account</a>
+          </li>
+          <li class="mb-2">
+            <a href="#!">Become an Affiliate</a>
+          </li>
+          <li class="mb-2">
+            <a href="#!">Shipping Rates</a>
+          </li>
+          <li class="mb-2">
+            <a href="#!">Help</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+        <!-- Links -->
+        <h5>Contacts</h5>
+        <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+        <ul class="fa-ul foot-desc ml-4">
+          <li class="mb-2"><span class="fa-li"><i class="far fa-map"></i></span>New York, Avenue Street 10
+          </li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span>042 876 836 908</li>
+          <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>company@example.com</li>
+          <li><span class="fa-li"><i class="far fa-clock"></i></span>Monday - Friday: 10-17</li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+  <!-- Footer Links -->
+  <div class="container pt-5 mb-3 pb-2">
+
+    <div class="row d-flex justify-content-center">
+
+      <!--Grid column-->
+      <div class="col-md-8 col-lg-6">
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mb-4">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
+            allowfullscreen></iframe>
+        </div>
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+ 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="media">
+  
+    
+    {% for a in data %}
+        <tr>
+            <h1 class="mt-0"><td>{{ a['blog_heading']}}</td></h1>
+            <td>{{ a['id']}}</td>
+            
+            <td>{{ a['blog_body']}}</td> <br>
+           <h2 class="mt-0"><td>author name:{{ a['author_name']}}</td></h2>
+           
+        </tr>
+    {% endfor %}
+  </div>
+</div>
+  
+
+</body>
+</html>
+
